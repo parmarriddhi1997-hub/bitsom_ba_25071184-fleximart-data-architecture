@@ -1,0 +1,21 @@
+DATA QUALITY REPORT
+=======================================================
+
+Table: customers
+Records processed        : 26
+Duplicates removed       : 1
+Missing values handled   : 5
+Records loaded           : 25
+-------------------------------------------------------
+Table: products
+Records processed        : 20
+Duplicates removed       : 0
+Missing values handled   : 4
+Records loaded           : 20
+-------------------------------------------------------
+Table: sales
+Records processed        : 41
+Duplicates removed       : 1
+Missing values handled   : 5
+Records loaded           : 35
+-------------------------------------------------------
