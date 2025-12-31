@@ -67,7 +67,7 @@ def parse_date(date_value):
 
 
 # -------------------------
-# TRANSFORM – CUSTOMERS
+# 6. TRANSFORM – CUSTOMERS
 # -------------------------
 
 # Strip column names and string values
@@ -93,7 +93,7 @@ customers["city"] = customers["city"].str.title()
 customers.reset_index(drop=True, inplace=True)
 
 # -------------------------
-# TRANSFORM – PRODUCTS
+# 7. TRANSFORM – PRODUCTS
 # -------------------------
 # Strip column names and string values
 products.columns = products.columns.str.strip()
@@ -115,7 +115,7 @@ products['product_name'] = products['product_name'].str.strip()
 products.reset_index(drop=True, inplace=True)
 
 # -------------------------
-# TRANSFORM – SALES
+# 8. TRANSFORM – SALES
 # -------------------------
 # Strip column names and string values
 sales.columns = sales.columns.str.strip()
@@ -138,7 +138,7 @@ sales["subtotal"] = sales["quantity"] * sales["unit_price"]
 sales['total_amount'] = sales.groupby("transaction_id")["subtotal"].transform('sum')
 
 # ----------------------------------
-# Split into orders and order_items
+# 9. Split into orders and order_items
 # ----------------------------------
 orders = sales[["transaction_id","customer_id","transaction_date","total_amount","status"]].drop_duplicates()
 order_items = sales[["transaction_id","product_id","quantity","unit_price","subtotal"]]
@@ -147,7 +147,7 @@ orders["customer_id"] = orders["customer_id"].str.replace("C","").astype(int)
 order_items["product_id"] = order_items["product_id"].str.replace("P","").astype(int)
 
 # -------------------------
-# LOAD – CUSTOMERS
+# 10. LOAD – CUSTOMERS
 # -------------------------
 # Prepare list of tuples
 data = [(
@@ -166,7 +166,7 @@ cursor.close()
 conn.close()
 
 # -------------------------
-# LOAD – PRODUCTS
+# 11. LOAD – PRODUCTS
 # -------------------------
 # Prepare list of tuples for batch insert
 data = [
@@ -192,7 +192,7 @@ conn.close()
 
 
 # -------------------------
-# LOAD – ORDERS & ORDER_ITEMS
+# 12. LOAD – ORDERS & ORDER_ITEMS
 # -------------------------
 try:
     # ---------------------------
