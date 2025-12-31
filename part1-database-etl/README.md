@@ -121,11 +121,8 @@ An automated ETL pipeline (__etl_pipeline.py__) was developed to:
 Cleaned data is inserted into the MySQL database using Python with proper error handling:
 
 - customers
-
 - products
-
 - orders
-
 - order_items
 
 Foreign key constraints ensure referential integrity.
@@ -170,11 +167,8 @@ The project uses the following normalized schema (provided in the assignment):
 #### Tables
 
 - customers
-
 - products
-
 - orders
-
 - order_items
 
 All tables use surrogate primary keys and enforce foreign key relationships.
