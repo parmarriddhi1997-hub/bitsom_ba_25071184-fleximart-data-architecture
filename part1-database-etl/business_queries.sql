@@ -11,7 +11,6 @@
 -- email, total number of orders placed, and total amount spent.
 -- Include only customers who have placed at least 2 orders and
 -- spent more than ₹5,000. Order by total amount spent descending."
---
 -- Expected to return customers with 2+ orders and >5000 spent
 -- ============================================================
 
@@ -45,7 +44,6 @@ ORDER BY
 -- of different products sold, total quantity sold, and total
 -- revenue generated. Only include categories that have generated
 -- more than ₹10,000 in revenue. Order by total revenue descending."
---
 -- Expected to return categories with >10000 revenue
 -- ============================================================
 
@@ -75,7 +73,6 @@ ORDER BY
 --   - total number of orders
 --   - total revenue
 --   - cumulative revenue (running total)
---
 -- Expected to show monthly and cumulative revenue
 -- ============================================================
 
