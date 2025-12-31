@@ -25,7 +25,7 @@ Stores information about registered customers who place orders on the platform.
 
 - One customer can place many orders
 
-       → Relationship: customers (1) → orders (M)
+    → Relationship: customers (1) → orders (M)
 
 ### ENTITY: products
 
